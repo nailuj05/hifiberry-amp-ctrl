@@ -26,6 +26,7 @@ def request_status():
     return False
 
 is_playing = False
+is_amp_on = False
 last_status_change_time = 0
 
 while True:
@@ -38,13 +39,15 @@ while True:
         is_playing = True
         # Start Amp here
         print("Amp started")
-    elif not new_status and is_playing:
+        is_amp_on = True
+    elif not new_status and is_amp_on:
         is_playing = False
         # Wait for 10 mins before stopping amp if nothing changes
         time_since_change = time.time() - last_status_change_time
         if time_since_change >= 600:  # 10 minutes = 600 seconds
             # Stop Amp here (Replace this comment with the actual code to stop the Amp)
             print("Amp stopped.")
+            is_amp_on = False
         else:
             print(f"Status unchanged. {time.time()} {last_status_change_time} {time_since_change} Waiting for {600 - int(time_since_change)} seconds before stopping Amp.")
 
