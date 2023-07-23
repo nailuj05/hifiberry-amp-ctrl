@@ -1,9 +1,10 @@
 import requests
 import json
+import time
 
 def check_players_playing(json_data):
     # Decode the JSON data
-    data = json.loads(json_data)
+    data = json_data
     
     # Get the list of players from the JSON data
     players = data.get('players', [])
@@ -19,10 +20,10 @@ def request_status():
     x = requests.get("http://127.0.0.1:81/api/player/status")
 
     if x.status_code == 200:
-        content = str(x.content)
-        content[0] = ''
-        print(content)
+        content = x.json()
         result = check_players_playing(content)
         print(result)
 
-request_status()
+while True:
+    request_status()
+    time.sleep(3)
