@@ -46,7 +46,7 @@ while True:
             # Stop Amp here (Replace this comment with the actual code to stop the Amp)
             print("Amp stopped.")
         else:
-            print(f"Status unchanged. Waiting for {600 - int(time_since_change)} seconds before stopping Amp.")
+            print(f"Status unchanged. {time.time()} {last_status_change_time} {time_since_change} Waiting for {600 - int(time_since_change)} seconds before stopping Amp.")
 
     elif new_status and is_playing:
         # If the status remains unchanged but is currently playing
