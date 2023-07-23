@@ -20,7 +20,7 @@ def request_status():
 
     if x.status_code == 200:
         print(x.content)
-        result = check_players_playing(x.content)
+        result = check_players_playing(str(x.content))
         print(result)
 
 request_status()
