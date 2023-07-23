@@ -19,7 +19,7 @@ def request_status():
     x = requests.get("http://127.0.0.1:81/api/player/status")
 
     if x.status_code == 200:
-        print(x.content)
+        print(str(x.json))
         result = check_players_playing(str(x.json))
         print(result)
 
