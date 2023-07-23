@@ -11,5 +11,5 @@ On HifiberryOS install this repo in the /dev/ folder.
 4. Navigate into the folder `cd hifiberry-amp-ctrl/`
 5. Start the process `python ./amp-ctrl.py`
 
-## Setting up Auto Start
+## Setting up Auto Start (not currently working)
 1. Run install.sh `./install.sh`
