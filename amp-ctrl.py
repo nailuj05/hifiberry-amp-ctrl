@@ -37,6 +37,7 @@ while True:
     if new_status and not is_playing:
         is_playing = True
         # Start Amp here
+        print("Amp started")
     elif not new_status and is_playing:
         # Wait for 10 mins before stopping amp if nothing changes
         time_since_change = time.time() - last_status_change_time
